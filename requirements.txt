@@ -1,0 +1,13 @@
+# Core Dependencies
+python-dotenv>=1.0.0
+fastapi>=0.68.0
+uvicorn>=0.15.0
+clarifai>=9.0.0
+streamlit>=1.31.0
+python-multipart>=0.0.5
+
+# Development
+pytest>=7.0.0
+black>=23.0.0
+isort>=5.10.1
+flake8>=6.0.0

@@ -1,0 +1,19 @@
+{
+  "name": "newsy-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for Newsy Headlines Interrogation and Classification",
+  "main": "src/main.py",
+  "scripts": {
+    "start": "uvicorn src.main:app --reload",
+    "test": "pytest"
+  },
+  "dependencies": {
+    "fastapi": "^0.68.0",
+    "uvicorn": "^0.15.0",
+    "clarifai": "^9.0.0",
+    "python-dotenv": "^1.0.0"
+  },
+  "devDependencies": {
+    "pytest": "^7.0.0"
+  }
+}
