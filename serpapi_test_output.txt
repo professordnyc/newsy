@@ -1,0 +1,714 @@
+2025-06-18 01:01:35,590 - src.services.serpapi_service - WARNING - CacheService not available, running without caching
+2025-06-18 01:01:35,590 - src.services.serpapi_service - INFO - Searching SerpAPI for: technology news in us
+2025-06-18 01:01:35,590 - src.services.serpapi_service - INFO - Using direct SerpAPI request (no cache)
+2025-06-18 01:01:35,651 - src.services.serpapi_service - INFO - Found 100 news_results
+2025-06-18 01:01:35,651 - src.services.serpapi_service - INFO - Processed 100 news items from 100 results
+2025-06-18 01:01:35,651 - src.services.serpapi_service - INFO - Processed 100 news articles
+Testing SerpAPI Integration
+SerpAPI service initialized with API key: 4c23****
+
+Searching for 'technology news' in us...
+
+Found 100 results:
+
+Result 1:
+  Title: A new technology for extending the shelf life of produce
+  Source: {'name': 'MIT News', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://news.mit.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Zach Winn']}
+  URL: https://news.mit.edu/2025/new-technology-extends-produce-shelf-life-0521
+  Date: 05/21/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 2:
+  Title: News: NATO releases new Science & Technology Strategy, 05-Jun.-2025
+  Source: {'name': 'NATO - Homepage', 'icon': 'https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.nato.int&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://www.nato.int/cps/en/natohq/news_236107.htm
+  Date: 06/11/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 3:
+  Title: What is AI Mode, Google's new artificial intelligence search technology?
+  Source: {'name': 'CBS News', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://www.cbsnews.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Mary Cunningham']}
+  URL: https://www.cbsnews.com/news/what-is-ai-mode-google-ai-search/
+  Date: 05/21/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 4:
+  Title: Business Technology News: Salesforce Agrees To Buy Informatica In A Deal Worth $8 Billion
+  Source: {'name': 'Forbes', 'icon': 'https://encrypted-tbn2.gstatic.com/faviconV2?url=https://www.forbes.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Gene Marks']}
+  URL: https://www.forbes.com/sites/quickerbettertech/2025/06/01/business-technology-news-salesforce-agrees-to-buy-informatica-in-a-deal-worth-8-billion/
+  Date: 06/01/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 5:
+  Title: Starbucks Adopts People-First Scheduling Strategy as It Reassesses Staffing Automation Investment
+  Source: {'name': 'Restaurant Technology News', 'icon': 'https://encrypted-tbn1.gstatic.com/faviconV2?url=https://restauranttechnologynews.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://restauranttechnologynews.com/2025/05/starbucks-adopts-people-first-scheduling-strategy-as-it-reassesses-staffing-automation-investment/
+  Date: 05/23/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 6:
+  Title: Retail Technology News: May update
+  Source: {'name': 'Chain Store Age', 'icon': 'https://encrypted-tbn2.gstatic.com/faviconV2?url=https://chainstoreage.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Dan Berthiaume']}
+  URL: https://chainstoreage.com/retail-technology-news-may-update-0
+  Date: 05/30/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 7:
+  Title: Exploring Gen AI Across the New Tech Frontier
+  Source: {'name': 'Homeland Security (.gov)', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://www.dhs.gov&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://www.dhs.gov/science-and-technology/news/2025/05/27/exploring-gen-ai-across-new-tech-frontier
+  Date: 05/27/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 8:
+  Title: Artistic Innovation at the Heart of Georgia TechÆs Newest District
+  Source: {'name': 'Georgia Tech News Center', 'icon': 'https://encrypted-tbn3.gstatic.com/faviconV2?url=https://news.gatech.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://news.gatech.edu/news/2025/05/27/artistic-innovation-heart-georgia-techs-newest-district
+  Date: 05/27/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 9:
+  Title: Florida Tech leader Dr. John Harris named Missouri S&TÆs new provost
+  Source: {'name': 'news.mst.edu', 'icon': 'https://encrypted-tbn2.gstatic.com/faviconV2?url=https://news.mst.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Velvet Hasner']}
+  URL: https://news.mst.edu/2025/06/florida-tech-leader-dr-john-harris-named-missouri-sts-new-provost/
+  Date: 06/10/2025, 07:28 PM, +0000 UTC
+  Snippet: ...
+
+Result 10:
+  Title: Defying Imagination, One Step at a Time
+  Source: {'name': 'Virginia Tech News', 'icon': 'https://encrypted-tbn3.gstatic.com/faviconV2?url=https://news.vt.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://news.vt.edu/videos/k/2025/05/1_cry76jvb.html
+  Date: 05/27/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 11:
+  Title: Tech news: BDO announces $1B AI strategy
+  Source: {'name': 'Accounting Today', 'icon': 'https://encrypted-tbn3.gstatic.com/faviconV2?url=https://www.accountingtoday.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Chris Gaetano']}
+  URL: https://www.accountingtoday.com/list/tech-news-bdo-announces-1b-ai-strategy
+  Date: 05/30/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 12:
+  Title: Lawsuit claims Workday's AI job screening technology discriminates against people
+  Source: {'name': 'Scripps News', 'icon': 'https://encrypted-tbn2.gstatic.com/faviconV2?url=https://www.scrippsnews.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://www.scrippsnews.com/science-and-tech/artificial-intelligence/lawsuit-claims-workdays-ai-job-screening-technology-discriminates-against-people
+  Date: 05/23/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 13:
+  Title: Week of May 25, 2025
+  Source: {'name': 'Restaurant Technology News', 'icon': 'https://encrypted-tbn1.gstatic.com/faviconV2?url=https://restauranttechnologynews.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://restauranttechnologynews.com/2025/06/restaurant-technology-news-recap-week-of-may-25-2025/
+  Date: 06/03/2025, 05:14 PM, +0000 UTC
+  Snippet: ...
+
+Result 14:
+  Title: Bringing meaning into technology deployment
+  Source: {'name': 'MIT News', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://news.mit.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Danna Lorch']}
+  URL: https://news.mit.edu/2025/bringing-meaning-technology-deployment-0611
+  Date: 06/11/2025, 08:15 PM, +0000 UTC
+  Snippet: ...
+
+Result 15:
+  Title: The biggest barrier to AI adoption in the business world isnÆt tech û itÆs user confidence
+  Source: {'name': 'news.mst.edu', 'icon': 'https://encrypted-tbn2.gstatic.com/faviconV2?url=https://news.mst.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Greg Edwards']}
+  URL: https://news.mst.edu/2025/05/the-biggest-barrier-to-ai-adoption-in-the-business-world-isnt-tech-its-user-confidence/
+  Date: 05/30/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 16:
+  Title: Combining technology, education, and human connection to improve online learning
+  Source: {'name': 'MIT News', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://news.mit.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Denise Brehm']}
+  URL: https://news.mit.edu/2025/caitlin-morris-combines-tech-education-human-connection-improve-online-learning-0617
+  Date: 06/17/2025, 08:25 PM, +0000 UTC
+  Snippet: ...
+
+Result 17:
+  Title: WendyÆs Drives Rapid Expansion with 74 New Restaurants Featuring Cutting-Edge Technology
+  Source: {'name': 'Restaurant Technology News', 'icon': 'https://encrypted-tbn1.gstatic.com/faviconV2?url=https://restauranttechnologynews.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://restauranttechnologynews.com/2025/06/wendys-drives-rapid-expansion-with-74-new-restaurants-featuring-cutting-edge-technology/
+  Date: 06/03/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 18:
+  Title: PAR Technology Launches Unified Guest Engagement Cloud Platform for Enterprise Restaurants
+  Source: {'name': 'Restaurant Technology News', 'icon': 'https://encrypted-tbn1.gstatic.com/faviconV2?url=https://restauranttechnologynews.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://restauranttechnologynews.com/2025/06/par-technology-launches-unified-guest-engagement-cloud-platform-for-enterprise-restaurants/
+  Date: 06/12/2025, 08:49 AM, +0000 UTC
+  Snippet: ...
+
+Result 19:
+  Title: Celebrating an academic-industry collaboration to advance vehicle technology
+  Source: {'name': 'MIT News', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://news.mit.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://news.mit.edu/2025/celebrating-academic-industry-collaboration-advance-vehicle-technology-0616
+  Date: 06/16/2025, 06:45 PM, +0000 UTC
+  Snippet: ...
+
+Result 20:
+  Title: 75th Anniversary: Technology changes to news gathering over News Channel 3's last 75 years
+  Source: {'name': 'WWMT', 'icon': 'https://encrypted-tbn1.gstatic.com/faviconV2?url=https://wwmt.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Kirk Mason']}
+  URL: https://wwmt.com/news/arc/news-channel-3-anniversary-technology-changes-information-gathering-video-photography-community-kalamazoo-west-michigan
+  Date: 06/16/2025, 09:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 21:
+  Title: A magnetic pull toward materials
+  Source: {'name': 'MIT News', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://news.mit.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://news.mit.edu/2025/magnetic-pull-toward-materials-maria-aguilar-0522
+  Date: 05/22/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 22:
+  Title: Feature Article: Testing New Technologies that Help Law Enforcement æSeeÆ Through Walls
+  Source: {'name': 'Homeland Security (.gov)', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://www.dhs.gov&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://www.dhs.gov/science-and-technology/news/2025/06/10/feature-article-testing-new-technologies-help-law-enforcement-see-through-walls
+  Date: 06/10/2025, 03:18 PM, +0000 UTC
+  Snippet: ...
+
+Result 23:
+  Title: Week of June 8, 2025
+  Source: {'name': 'Hotel Technology News', 'icon': 'https://encrypted-tbn1.gstatic.com/faviconV2?url=https://hoteltechnologynews.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://hoteltechnologynews.com/2025/06/hotel-technology-news-recap-week-of-june-8-2025/
+  Date: 06/08/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 24:
+  Title: Virginia Tech announces new Institute for Advanced Computing in the Washington, D.C., area
+  Source: {'name': 'Virginia Tech News', 'icon': 'https://encrypted-tbn3.gstatic.com/faviconV2?url=https://news.vt.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://news.vt.edu/articles/2025/05/provost-dc-institute-for-advanced-computing.html
+  Date: 05/27/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 25:
+  Title: Window-sized device taps the air for safe drinking water
+  Source: {'name': 'MIT News', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://news.mit.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Jennifer Chu']}
+  URL: https://news.mit.edu/2025/window-sized-device-taps-air-safe-drinking-water-0611
+  Date: 06/11/2025, 09:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 26:
+  Title: Business Technology News: Google CEO Sundar Pichai Is Optimistic About AI's Future
+  Source: {'name': 'Forbes', 'icon': 'https://encrypted-tbn2.gstatic.com/faviconV2?url=https://www.forbes.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Gene Marks']}
+  URL: https://www.forbes.com/sites/quickerbettertech/2025/06/08/google-ceo-ai-future-business-tech-news/
+  Date: 06/08/2025, 11:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 27:
+  Title: NJCU Educational Technology Department Celebrates 10th Cohort of Doctoral Graduates, Including Member of New Jersey Air National Guard
+  Source: {'name': 'New Jersey City University', 'icon': 'https://encrypted-tbn2.gstatic.com/faviconV2?url=https://www.njcu.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://www.njcu.edu/about/news/2025/06/njcu-educational-technology-department-celebrates-10th-cohort-doctoral-graduates-including-member-new-jersey-air-national-guard
+  Date: 06/12/2025, 09:49 PM, +0000 UTC
+  Snippet: ...
+
+Result 28:
+  Title: Meta files lawsuit against maker of "nudify" app technology
+  Source: {'name': 'CBS News', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://www.cbsnews.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Megan Cerullo']}
+  URL: https://www.cbsnews.com/news/meta-nudify-app-lawsuit-crushai/
+  Date: 06/12/2025, 11:27 AM, +0000 UTC
+  Snippet: ...
+
+Result 29:
+  Title: Inside IllinoisÆ efforts to court the emerging quantum technology industry
+  Source: {'name': 'Capitol News Illinois', 'icon': 'https://encrypted-tbn1.gstatic.com/faviconV2?url=https://capitolnewsillinois.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Andrew Adams']}
+  URL: https://capitolnewsillinois.com/news/inside-illinois-efforts-to-court-the-emerging-quantum-technology-industry/
+  Date: 06/17/2025, 10:18 PM, +0000 UTC
+  Snippet: ...
+
+Result 30:
+  Title: Week of May 25, 2025
+  Source: {'name': 'Hotel Technology News', 'icon': 'https://encrypted-tbn1.gstatic.com/faviconV2?url=https://hoteltechnologynews.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://hoteltechnologynews.com/2025/06/hotel-technology-news-recap-week-of-may-25-2025/
+  Date: 06/04/2025, 12:39 PM, +0000 UTC
+  Snippet: ...
+
+Result 31:
+  Title: AI researchers develop new technologies for cancer care
+  Source: {'name': 'VUMC News', 'icon': 'https://encrypted-tbn1.gstatic.com/faviconV2?url=https://news.vumc.org&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Tom Wilemon']}
+  URL: https://news.vumc.org/2025/06/03/ai-researchers-develop-new-technologies-for-cancer-care/
+  Date: 06/03/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 32:
+  Title: AppleÆs AI Misstep? 5 Tech Updates Your Business CanÆt Ignore
+  Source: {'name': 'Forbes', 'icon': 'https://encrypted-tbn2.gstatic.com/faviconV2?url=https://www.forbes.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Gene Marks']}
+  URL: https://www.forbes.com/sites/quickerbettertech/2025/06/15/apple-ai-misstep-business-tech-news/
+  Date: 06/15/2025, 11:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 33:
+  Title: ATR and RTX's Pratt & Whitney Canada collaborate on propulsion technology to advance next-generation regional turboprops
+  Source: {'name': 'RTX', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://www.rtx.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://www.rtx.com/news/news-center/2025/06/16/atr-and-rtxs-pratt-whitney-canada-collaborate-on-propulsion-technology-to-adva
+  Date: 06/16/2025, 12:32 PM, +0000 UTC
+  Snippet: ...
+
+Result 34:
+  Title: Why we need 'revolutionary' cooling tech
+  Source: {'name': 'BBC', 'icon': 'https://encrypted-tbn2.gstatic.com/faviconV2?url=https://www.bbc.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Christine Ro']}
+  URL: https://www.bbc.com/news/articles/cpdzjev2d9wo
+  Date: 05/19/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 35:
+  Title: How we really judge AI
+  Source: {'name': 'MIT News', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://news.mit.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Peter Dizikes']}
+  URL: https://news.mit.edu/2025/how-we-really-judge-ai-0610
+  Date: 06/10/2025, 03:30 PM, +0000 UTC
+  Snippet: ...
+
+Result 36:
+  Title: Feature Article: S&T Technology is Keeping our Skies Safe
+  Source: {'name': 'Homeland Security (.gov)', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://www.dhs.gov&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://www.dhs.gov/science-and-technology/news/2025/06/17/feature-article-st-technology-keeping-our-skies-safe
+  Date: 06/17/2025, 04:57 PM, +0000 UTC
+  Snippet: ...
+
+Result 37:
+  Title: Canary Technologies Raises $80 Million to Expand Its Global Presence and Enhance AI-Powered Hotel Solutions
+  Source: {'name': 'Hotel Technology News', 'icon': 'https://encrypted-tbn1.gstatic.com/faviconV2?url=https://hoteltechnologynews.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://hoteltechnologynews.com/2025/06/canary-technologies-raises-80-million-to-expand-its-global-presence-and-enhance-ai-powered-hotel-solutions/
+  Date: 06/14/2025, 09:54 AM, +0000 UTC
+  Snippet: ...
+
+Result 38:
+  Title: MIT announces the Initiative for New Manufacturing
+  Source: {'name': 'MIT News', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://news.mit.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Peter Dizikes']}
+  URL: https://news.mit.edu/2025/mit-announces-initiative-for-new-manufacturing-0527
+  Date: 05/27/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 39:
+  Title: AI users form relationships with technology
+  Source: {'name': 'CBS News', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://www.cbsnews.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://www.cbsnews.com/video/ai-users-form-relationships-with-technology/
+  Date: 06/14/2025, 12:07 PM, +0000 UTC
+  Snippet: ...
+
+Result 40:
+  Title: Round Rock-based Dell Technologies on Best Companies list
+  Source: {'name': 'City of Round Rock (.gov)', 'icon': 'https://encrypted-tbn3.gstatic.com/faviconV2?url=https://www.roundrocktexas.gov&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://www.roundrocktexas.gov/news/round-rock-based-dell-technologies-on-best-companies-list/
+  Date: 06/13/2025, 02:29 PM, +0000 UTC
+  Snippet: ...
+
+Result 41:
+  Title: 10 Takeaways From TechÆs Biggest News Week of the Year
+  Source: {'name': 'TheWrap', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://www.thewrap.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Alex Kantrowitz']}
+  URL: https://www.thewrap.com/10-takeaways-from-techs-biggest-news-week-of-the-year/
+  Date: 05/23/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 42:
+  Title: HarvardÆs Chief Technology Development Officer Steps Down After 20 Years | News
+  Source: {'name': 'The Harvard Crimson', 'icon': 'https://encrypted-tbn3.gstatic.com/faviconV2?url=https://www.thecrimson.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Danielle J. Im']}
+  URL: https://www.thecrimson.com/article/2025/6/14/isaac-kohlberg-leaves/
+  Date: 06/14/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 43:
+  Title: Georgia Tech Is Advancing AtlantaÆs Tech Ecosystem
+  Source: {'name': 'Georgia Tech News Center', 'icon': 'https://encrypted-tbn3.gstatic.com/faviconV2?url=https://news.gatech.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://news.gatech.edu/news/2025/06/03/georgia-tech-advancing-atlantas-tech-ecosystem
+  Date: 06/03/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 44:
+  Title: AI Stocks Face 'Show Me' Moment: Meta, Nvidia, CoreWeave Flex Muscles
+  Source: {'name': "Investor's Business Daily", 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://www.investors.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Reinhardt Krause']}
+  URL: https://www.investors.com/news/technology/artificial-intelligence-stocks/
+  Date: 06/16/2025, 11:25 AM, +0000 UTC
+  Snippet: ...
+
+Result 45:
+  Title: New facility to accelerate materials solutions for fusion energy
+  Source: {'name': 'MIT News', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://news.mit.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://news.mit.edu/2025/new-facility-accelerate-materials-solutions-fusion-energy-0609
+  Date: 06/09/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 46:
+  Title: New fuel cell could enable electric aviation
+  Source: {'name': 'MIT News', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://news.mit.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://news.mit.edu/2025/new-fuel-cell-could-enable-electric-aviation-0527
+  Date: 05/27/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 47:
+  Title: Style guide changes for Virginia TechÆs presence in Alexandria
+  Source: {'name': 'Virginia Tech News', 'icon': 'https://encrypted-tbn3.gstatic.com/faviconV2?url=https://news.vt.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://news.vt.edu/notices/2025/05/cm-style-alexandria.html
+  Date: 05/27/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 48:
+  Title: Crunchtime and QSR Automations Merge in Bid to Unify Restaurant Operations and Transform Kitchen Intelligence
+  Source: {'name': 'Restaurant Technology News', 'icon': 'https://encrypted-tbn1.gstatic.com/faviconV2?url=https://restauranttechnologynews.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://restauranttechnologynews.com/2025/06/crunchtime-and-qsr-automations-merge-in-bid-to-unify-restaurant-operations-and-transform-kitchen-intelligence/
+  Date: 06/12/2025, 08:14 AM, +0000 UTC
+  Snippet: ...
+
+Result 49:
+  Title: Convenience Store News Reveals Winners of 2025 Technology Leader of the Year Awards
+  Source: {'name': 'Convenience Store News', 'icon': 'https://encrypted-tbn3.gstatic.com/faviconV2?url=https://csnews.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Melissa Kress']}
+  URL: https://csnews.com/convenience-store-news-reveals-winners-2025-technology-leader-year-awards
+  Date: 05/30/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 50:
+  Title: This WeekÆs CGT News: Sarepta Gets FDA Platform Technology Designation
+  Source: {'name': 'themedicinemaker.com', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://themedicinemaker.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://themedicinemaker.com/manufacture/this-weeks-cgt-news-sarepta-gets-fda-platform-technology-designation
+  Date: 06/12/2025, 09:54 AM, +0000 UTC
+  Snippet: ...
+
+Result 51:
+  Title: Envisioning a future where health care tech leaves some behind
+  Source: {'name': 'MIT News', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://news.mit.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://news.mit.edu/2025/envisioning-future-where-health-care-tech-leaves-some-behind-0609
+  Date: 06/09/2025, 08:10 PM, +0000 UTC
+  Snippet: ...
+
+Result 52:
+  Title: Trump Media And Technology Group (DJT) Lashes Out With ôFake Newsö Labels Following Financial TimesÆ Report Of A $3 Billion Capital Raise
+  Source: {'name': 'Wccftech', 'icon': 'https://encrypted-tbn2.gstatic.com/faviconV2?url=https://wccftech.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Rohail Saleem']}
+  URL: https://wccftech.com/trump-media-and-technology-group-djt-lashes-out-with-fake-news-labels-following-financial-times-report-of-a-3-billion-capital-raise/
+  Date: 05/26/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 53:
+  Title: Tech execs enlist in Army Reserve for new innovation detachment
+  Source: {'name': 'Defense News', 'icon': 'https://encrypted-tbn2.gstatic.com/faviconV2?url=https://www.defensenews.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Jen Judson']}
+  URL: https://www.defensenews.com/land/2025/06/13/tech-execs-enlist-in-army-reserve-for-new-innovation-detachment/
+  Date: 06/13/2025, 03:46 PM, +0000 UTC
+  Snippet: ...
+
+Result 54:
+  Title: Melding data, systems, and society
+  Source: {'name': 'MIT News', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://news.mit.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://news.mit.edu/2025/data-systems-and-society-0610
+  Date: 06/10/2025, 06:25 PM, +0000 UTC
+  Snippet: ...
+
+Result 55:
+  Title: Technology Transformation Becomes Mission Critical for the Aviation Industry
+  Source: {'name': 'act-news.com', 'icon': 'https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.act-news.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Joe Annotti']}
+  URL: https://www.act-news.com/news/technology-transformation-becomes-mission-critical-for-the-aviation-industry/
+  Date: 05/30/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 56:
+  Title: Gaspare LoDuca named VP for information systems and technology and CIO
+  Source: {'name': 'MIT News', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://news.mit.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://news.mit.edu/2025/gaspare-loduca-named-vp-information-systems-technology-and-cio-0617
+  Date: 06/17/2025, 04:30 PM, +0000 UTC
+  Snippet: ...
+
+Result 57:
+  Title: Circle K Earns Technology Honors in Europe
+  Source: {'name': 'Convenience Store News', 'icon': 'https://encrypted-tbn3.gstatic.com/faviconV2?url=https://csnews.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Angela Hanson']}
+  URL: https://csnews.com/circle-k-earns-technology-honors-europe
+  Date: 06/04/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 58:
+  Title: BetaNXT Wins FTF News Technology Innovation Award as Best Corporate Actions Service Provider, for Next-Generation CastX Solution
+  Source: {'name': 'PR Newswire', 'icon': 'https://encrypted-tbn2.gstatic.com/faviconV2?url=https://www.prnewswire.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://www.prnewswire.com/news-releases/betanxt-wins-ftf-news-technology-innovation-award-as-best-corporate-actions-service-provider-for-next-generation-castx-solution-302470427.html
+  Date: 06/02/2025, 03:00 PM, +0000 UTC
+  Snippet: ...
+
+Result 59:
+  Title: Google starts embedding AI chatbot into search
+  Source: {'name': 'BBC', 'icon': 'https://encrypted-tbn2.gstatic.com/faviconV2?url=https://www.bbc.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Lily Jamali']}
+  URL: https://www.bbc.com/news/articles/cpw77qwd117o
+  Date: 05/20/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 60:
+  Title: 25 years of TechNite: Regional technology showcase has grown
+  Source: {'name': 'Cardinal News', 'icon': 'https://encrypted-tbn3.gstatic.com/faviconV2?url=https://cardinalnews.org&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Tad Dickens']}
+  URL: https://cardinalnews.org/2025/05/29/25-years-of-technite-regional-technology-showcase-has-grown/
+  Date: 05/29/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 61:
+  Title: How Technology Is Personalizing Healthcare in 2025
+  Source: {'name': 'MedCity News', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://medcitynews.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['John Squeo']}
+  URL: https://medcitynews.com/2025/06/how-technology-is-personalizing-healthcare-in-2025/
+  Date: 06/11/2025, 12:52 PM, +0000 UTC
+  Snippet: ...
+
+Result 62:
+  Title: Funding through UofL partnership helps Laurel County company improve technology
+  Source: {'name': 'UofLNews', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://www.uoflnews.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Betty Coffman']}
+  URL: https://www.uoflnews.com/post/uofltoday/funding-through-uofl-partnership-helps-laurel-county-company-improve-technology/
+  Date: 06/17/2025, 10:18 AM, +0000 UTC
+  Snippet: ...
+
+Result 63:
+  Title: Gila River Tribes Intend to Float Solar Panels on a Reservoir. Could the Technology Help the Colorado River?
+  Source: {'name': 'Inside Climate News', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://insideclimatenews.org&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Jake Bolster']}
+  URL: https://insideclimatenews.org/news/01062025/gila-river-tribes-floating-solar-could-help-colorado-river/
+  Date: 06/01/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 64:
+  Title: Exploring the future of hospitality and tourism education
+  Source: {'name': 'Virginia Tech News', 'icon': 'https://encrypted-tbn3.gstatic.com/faviconV2?url=https://news.vt.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://news.vt.edu/articles/2025/05/pamplin-htm-technology-education-panel.html
+  Date: 05/29/2025, 01:30 PM, +0000 UTC
+  Snippet: ...
+
+Result 65:
+  Title: Managing the tsunami of data and adopting AI technology to create precision care
+  Source: {'name': 'Philips', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://www.philips.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://www.philips.com/a-w/about/news/archive/standard/news/articles/2025/managing-the-tsunami-of-data-and-adopting-ai-technology-to-create-precision-care.html
+  Date: 06/02/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 66:
+  Title: 3 Questions on Whether Technology Is Ruining Language
+  Source: {'name': 'U.S. News & World Report', 'icon': 'https://encrypted-tbn2.gstatic.com/faviconV2?url=https://www.usnews.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Hilary Krieger']}
+  URL: https://www.usnews.com/opinion/articles/2025-05-23/language-technology-gabe-henry-counterpoint
+  Date: 05/23/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 67:
+  Title: How the brain solves complicated problems
+  Source: {'name': 'MIT News', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://news.mit.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Anne Trafton']}
+  URL: https://news.mit.edu/2025/how-brain-solves-complicated-problems-0611
+  Date: 06/11/2025, 09:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 68:
+  Title: Tech news: Karbon Practice Management evolves into Practice Intelligence
+  Source: {'name': 'Accounting Today', 'icon': 'https://encrypted-tbn3.gstatic.com/faviconV2?url=https://www.accountingtoday.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Chris Gaetano']}
+  URL: https://www.accountingtoday.com/list/tech-news-karbon-practice-management-evolves-into-practice-intelligence
+  Date: 06/06/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 69:
+  Title: Scripps News hires business and technology correspondent
+  Source: {'name': 'Editor and Publisher', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://www.editorandpublisher.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://www.editorandpublisher.com/stories/scripps-news-hires-business-and-technology-correspondent,256269
+  Date: 06/17/2025, 01:42 PM, +0000 UTC
+  Snippet: ...
+
+Result 70:
+  Title: Frugal tech: The start-ups working on cheap innovation
+  Source: {'name': 'BBC', 'icon': 'https://encrypted-tbn2.gstatic.com/faviconV2?url=https://www.bbc.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Devina Gupta']}
+  URL: https://www.bbc.com/news/articles/c20xlqn0e5po
+  Date: 05/26/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 71:
+  Title: Trump wants to create manufacturing jobs. His tech allies invest in robots to do the work.
+  Source: {'name': 'ABC News', 'icon': 'https://encrypted-tbn3.gstatic.com/faviconV2?url=https://abcnews.go.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Max Zahn']}
+  URL: https://abcnews.go.com/Business/trumps-create-manufacturing-jobs-tech-allies-invest-robots/story?id=121869903
+  Date: 05/24/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 72:
+  Title: Real-time police center leverages technology to enhance campus safety
+  Source: {'name': 'GCU News', 'icon': 'https://encrypted-tbn1.gstatic.com/faviconV2?url=https://news.gcu.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Mark Gonzales']}
+  URL: https://news.gcu.edu/gcu-news/real-time-police-center-leverages-technology-to-enhance-campus-safety/
+  Date: 06/02/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 73:
+  Title: Graphjet Technology Founder Boosts Stake as Company Races to Complete 2024 Annual Report
+  Source: {'name': 'Stock Titan', 'icon': 'https://encrypted-tbn2.gstatic.com/faviconV2?url=https://www.stocktitan.net&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://www.stocktitan.net/news/GTI/graphjet-technology-finalizing-annual-esirziueop1y.html
+  Date: 05/27/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 74:
+  Title: Frontgrade Technologies and VORAGO Announce Strategic Collaboration to Advance Space Computing Solutions for Autonomous Applications
+  Source: {'name': 'SpaceNews', 'icon': 'https://encrypted-tbn1.gstatic.com/faviconV2?url=https://spacenews.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://spacenews.com/frontgrade-technologies-and-vorago-announce-strategic-collaboration-to-advance-space-computing-solutions-for-autonomous-applications/
+  Date: 05/28/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 75:
+  Title: PFAS-destroying technology featured in Lake Elmo demonstration project
+  Source: {'name': 'MPR News', 'icon': 'https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.mprnews.org&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Mark Zdechlik']}
+  URL: https://www.mprnews.org/story/2025/05/30/pfas-destroying-technology-featured-in-lake-elmo-demonstration-project
+  Date: 05/30/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 76:
+  Title: Lutz takes over technology and innovation team at Automotive News
+  Source: {'name': 'Talking Biz News', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://talkingbiznews.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Chris Roush']}
+  URL: https://talkingbiznews.com/media-news/lutz-takes-over-technology-and-innovation-team-at-automotive-news/
+  Date: 06/01/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 77:
+  Title: The people who think AI might become conscious
+  Source: {'name': 'BBC', 'icon': 'https://encrypted-tbn2.gstatic.com/faviconV2?url=https://www.bbc.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Pallab Ghosh']}
+  URL: https://www.bbc.com/news/articles/c0k3700zljjo
+  Date: 05/25/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 78:
+  Title: Inroads to personalized AI trip planning
+  Source: {'name': 'MIT News', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://news.mit.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://news.mit.edu/2025/inroads-personalized-ai-trip-planning-0610
+  Date: 06/10/2025, 07:00 PM, +0000 UTC
+  Snippet: ...
+
+Result 79:
+  Title: Breakthrough soft robotics could redefine artificial heart technology
+  Source: {'name': 'News-Medical', 'icon': 'https://encrypted-tbn3.gstatic.com/faviconV2?url=https://www.news-medical.net&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Sanchari Sinha Dutta']}
+  URL: https://www.news-medical.net/news/20250605/Breakthrough-soft-robotics-could-redefine-artificial-heart-technology.aspx
+  Date: 06/05/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 80:
+  Title: 10 Takeaways From Tech's Biggest News Week of the Year
+  Source: {'name': 'CMSWire.com', 'icon': 'https://encrypted-tbn3.gstatic.com/faviconV2?url=https://www.cmswire.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Alex Kantrowitz']}
+  URL: https://www.cmswire.com/digital-experience/10-takeaways-from-techs-biggest-news-week-of-the-year/
+  Date: 05/29/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 81:
+  Title: The shadow architects of power
+  Source: {'name': 'MIT News', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://news.mit.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Leda Zimmerman']}
+  URL: https://news.mit.edu/2025/shadow-architects-of-power-0611
+  Date: 06/11/2025, 08:25 PM, +0000 UTC
+  Snippet: ...
+
+Result 82:
+  Title: A legacy of innovation at the Deseret News
+  Source: {'name': 'Deseret News', 'icon': 'https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.deseret.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Burke Olsen']}
+  URL: https://www.deseret.com/utah/2025/06/13/deseret-news-history-innovations-over-time/
+  Date: 06/14/2025, 03:03 AM, +0000 UTC
+  Snippet: ...
+
+Result 83:
+  Title: Overlooked cells might explain the human brainÆs huge storage capacity
+  Source: {'name': 'MIT News', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://news.mit.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Anne Trafton']}
+  URL: https://news.mit.edu/2025/overlooked-cells-might-explain-human-brains-huge-storage-capacity-0527
+  Date: 05/27/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 84:
+  Title: Hartford High students leave technology behind for school trip
+  Source: {'name': 'Valley News', 'icon': 'https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.vnews.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://www.vnews.com/Hartford-High-Students-Unplug-61290135
+  Date: 05/25/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 85:
+  Title: Testing new technology :: Fort Drum
+  Source: {'name': 'army.mil', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://home.army.mil&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://home.army.mil/drum/about/news/news-archives-june-2025/testing-new-technology
+  Date: 06/10/2025, 09:22 PM, +0000 UTC
+  Snippet: ...
+
+Result 86:
+  Title: Anantha Chandrakasan named MIT provost
+  Source: {'name': 'MIT News', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://news.mit.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Kathy Wren']}
+  URL: https://news.mit.edu/2025/anantha-chandrakasan-named-mit-provost-0616
+  Date: 06/16/2025, 05:00 PM, +0000 UTC
+  Snippet: ...
+
+Result 87:
+  Title: Rain Shuffles Schedule at WWTR; Cars On Track at 2 P.M. ET
+  Source: {'name': 'INDYCAR.com', 'icon': 'https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.indycar.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://www.indycar.com/news/2025/06/06-14-rain-sked-wwtr
+  Date: 06/14/2025, 09:47 PM, +0000 UTC
+  Snippet: ...
+
+Result 88:
+  Title: News - AMLC hosts summit for Healthcare Technology Management Week
+  Source: {'name': 'DVIDS', 'icon': 'https://encrypted-tbn3.gstatic.com/faviconV2?url=https://www.dvidshub.net&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Cj Lovelace']}
+  URL: https://www.dvidshub.net/news/499092/amlc-hosts-summit-healthcare-technology-management-week
+  Date: 05/28/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 89:
+  Title: New technology interests lakes foundation
+  Source: {'name': 'fairmontsentinel.com', 'icon': 'https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.fairmontsentinel.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Brooke Wohlrabe']}
+  URL: https://www.fairmontsentinel.com/news/local-news/2025/06/17/new-technology-interests-lakes-foundation/
+  Date: 06/17/2025, 06:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 90:
+  Title: Favorites and Sleepers: World Wide Technology Raceway
+  Source: {'name': 'INDYCAR.com', 'icon': 'https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.indycar.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://www.indycar.com/news/2025/06/06-13-wwtr-favssleepers
+  Date: 06/01/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 91:
+  Title: Rolls-Royce SMR named as UK's selected technology
+  Source: {'name': 'World Nuclear News', 'icon': 'https://encrypted-tbn2.gstatic.com/faviconV2?url=https://world-nuclear-news.org&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://world-nuclear-news.org/articles/rolls-royce-smr-named-as-uks-selected-technology
+  Date: 06/10/2025, 08:54 PM, +0000 UTC
+  Snippet: ...
+
+Result 92:
+  Title: Quantum stocks surge as Nvidia CEO says technology reaching 'inflection point'
+  Source: {'name': 'Yahoo Finance', 'icon': 'https://encrypted-tbn1.gstatic.com/faviconV2?url=https://finance.yahoo.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Laura Bratton']}
+  URL: https://finance.yahoo.com/news/quantum-stocks-surge-as-nvidia-ceo-says-technology-reaching-inflection-point-134729348.html
+  Date: 06/11/2025, 08:22 PM, +0000 UTC
+  Snippet: ...
+
+Result 93:
+  Title: Commencement address by Hank Green
+  Source: {'name': 'MIT News', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://news.mit.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://news.mit.edu/2025/commencement-address-hank-green-0529
+  Date: 05/29/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 94:
+  Title: Microchip Technology Full Year 2025 Earnings: EPS Misses Expectations
+  Source: {'name': 'Yahoo Finance', 'icon': 'https://encrypted-tbn1.gstatic.com/faviconV2?url=https://finance.yahoo.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://finance.yahoo.com/news/microchip-technology-full-2025-earnings-113830516.html
+  Date: 05/26/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 95:
+  Title: Faces of MIT: Lorena Tovar
+  Source: {'name': 'MIT News', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://news.mit.edu&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://news.mit.edu/2025/faces-of-mit-lorena-tovar-0609
+  Date: 06/09/2025, 08:35 PM, +0000 UTC
+  Snippet: ...
+
+Result 96:
+  Title: Palantir gets great news from the Pentagon
+  Source: {'name': 'TheStreet', 'icon': 'https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.thestreet.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ["Samuel O'Brient"]}
+  URL: https://www.thestreet.com/technology/palantir-gets-great-news-from-the-pentagon
+  Date: 05/27/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 97:
+  Title: Braskem and Ardent Advance Breakthrough Olefin Separation Technology Towards Commercial Implementation
+  Source: {'name': 'braskem.com.br', 'icon': 'https://encrypted-tbn2.gstatic.com/faviconV2?url=https://www.braskem.com.br&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://www.braskem.com.br/usa/news-detail/braskem-and-ardent-advance-breakthrough-olefin-separation-technology-towards-commercial-implementation
+  Date: 06/03/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 98:
+  Title: The Technologies Fueling the Future of Fusion
+  Source: {'name': 'Berkeley Lab News Center (.gov)', 'icon': 'https://encrypted-tbn3.gstatic.com/faviconV2?url=https://newscenter.lbl.gov&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Lauren Biron']}
+  URL: https://newscenter.lbl.gov/2025/06/12/the-technologies-fueling-the-future-of-fusion/
+  Date: 06/12/2025, 03:10 PM, +0000 UTC
+  Snippet: ...
+
+Result 99:
+  Title: PhocusWire's weekly travel tech news briefs: Amex GBT, Cloudbeds, IDeaS and more...
+  Source: {'name': 'PhocusWire', 'icon': 'https://encrypted-tbn0.gstatic.com/faviconV2?url=https://www.phocuswire.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL'}
+  URL: https://www.phocuswire.com/travel-tech-news-briefs-may-30-2025
+  Date: 05/30/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Result 100:
+  Title: Breakingviews - Tech titans clash over scraps of limited time
+  Source: {'name': 'Reuters', 'icon': 'https://encrypted-tbn2.gstatic.com/faviconV2?url=https://www.reuters.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL', 'authors': ['Jennifer Saba']}
+  URL: https://www.reuters.com/breakingviews/tech-titans-clash-over-scraps-limited-time-2025-05-27/
+  Date: 05/29/2025, 07:00 AM, +0000 UTC
+  Snippet: ...
+
+Results saved to serpapi_integration_test_results.json

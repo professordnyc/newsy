@@ -1,0 +1,24 @@
+Top-level keys in response: ['search_metadata', 'search_parameters', 'search_information', 'news_results', 'pagination', 'serpapi_pagination']
+
+Found 10 news results
+
+--- Result 1 ---
+Keys in result: ['position', 'link', 'title', 'source', 'date', 'snippet', 'favicon', 'thumbnail']
+Title: Meet the Corvette ZR1X: America's 1,250-horsepower hybrid hypercar
+Source (string): Engadget
+Link: https://www.engadget.com/transportation/meet-the-corvette-zr1x-americas-1250-horsepower-hybrid-hypercar-140018897.html
+Date: 15 hours ago
+
+--- Result 2 ---
+Keys in result: ['position', 'link', 'title', 'source', 'date', 'snippet', 'favicon', 'thumbnail']
+Title: Google Messages just pulled the plug on its new unsubscribe button for some users
+Source (string): Android Authority
+Link: https://www.androidauthority.com/google-messages-unsubscribe-button-removed-3568354/
+Date: 12 hours ago
+
+--- Result 3 ---
+Keys in result: ['position', 'link', 'title', 'source', 'date', 'snippet', 'favicon', 'thumbnail']
+Title: One last look at software support as macOS 26 Tahoe winds down the Intel Mac era
+Source (string): Ars Technica
+Link: https://arstechnica.com/gadgets/2025/06/one-last-look-at-software-support-as-macos-26-tahoe-winds-down-the-intel-mac-era/
+Date: 15 hours ago

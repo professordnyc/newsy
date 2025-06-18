@@ -30,6 +30,9 @@ logger = logging.getLogger(__name__)
 src_dir = str(Path(__file__).parent.parent.parent.parent / "src")
 if src_dir not in sys.path:
     sys.path.append(str(src_dir))
+    
+logger.debug(f"Added {src_dir} to sys.path")
+logger.debug(f"Current sys.path: {sys.path}")
 
 # Initialize services
 def initialize_services():
@@ -131,14 +134,14 @@ def root():
     """Root endpoint with basic API information"""
     return {
         "name": "Newsy MCP Server",
-        "version": "0.1.0",
-        "description": "News classification and analysis service",
+        "version": "0.3.0",  # Changed from 0.1.0 to 0.3.0 to verify changes are applied
+        "status": "running",  # Added status field
+        "timestamp": datetime.utcnow().isoformat(),  # Added timestamp
         "services": {
-            "search": "/search/headlines",
-            "extract": "/extract/article",
-            "analyze": "/analyze/article",
-            "health": "/health",
-            "cache": "/cache/clear"
+            "serpapi": services.get('serp') is not None,
+            "article_extraction": services.get('article') is not None,
+            "clarifai": services.get('clarifai') is not None,
+            "caching": services.get('cache') is not None
         }
     }
 
@@ -244,10 +247,17 @@ async def search_headlines(
                     except (ValueError, TypeError):
                         publish_date = datetime.utcnow()
 
+                # Handle source field which can be a dictionary or a string
+                source = 'Unknown'
+                if isinstance(result.get('source'), dict):
+                    source = result.get('source', {}).get('name', 'Unknown')
+                else:
+                    source = str(result.get('source', 'Unknown'))
+                
                 article = NewsArticle(
                     title=result.get('title', '').strip() or "No title available",
-                    url=result.get('link', result.get('url', '')),
-                    source=(result.get('source') or {}).get('name', result.get('source', 'Unknown')) if isinstance(result.get('source'), dict) else result.get('source', 'Unknown'),
+                    url=result.get('url', result.get('link', '')),
+                    source=source,
                     snippet=result.get('snippet', '').strip() or "No preview available",
                     publish_date=publish_date,
                     region=request.region,
@@ -255,7 +265,8 @@ async def search_headlines(
                     metadata={
                         'search_position': idx + 1,
                         'search_query': request.query,
-                        'source_url': result.get('link', '')
+                        'source_url': result.get('link', ''),
+                        'raw_date': result.get('date', '')  # Store the original date string
                     }
                 )
                 articles.append(article)
@@ -399,6 +410,12 @@ async def analyze_article(
             detail=f"Error analyzing article: {str(e)}"
         )
 
+# Simple test endpoint
+@app.get("/test")
+async def test_endpoint():
+    """Simple test endpoint to verify route registration."""
+    return {"status": "success", "message": "Test endpoint is working"}
+
 # Health check endpoint
 @app.get("/health")
 async def health_check(services: dict = Depends(check_services)):
@@ -461,7 +478,7 @@ async def clear_cache(
 
 if __name__ == "__main__":
     uvicorn.run(
-        "main:app",
+        "mcp.v1.src.main:app",
         host="0.0.0.0",
         port=int(os.getenv("PORT", 8000)),
         reload=True,

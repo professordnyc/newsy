@@ -1,0 +1,26 @@
+=== SerpAPI Response Structure ===
+
+Top-level keys: ['search_metadata', 'search_parameters', 'search_information', 'news_results', 'pagination', 'serpapi_pagination']
+
+=== Search Parameters ===
+engine: google
+q: technology news
+google_domain: google.com
+gl: us
+device: desktop
+tbm: nws
+
+=== News Results (10 items) ===
+News item structure (keys): ['position', 'link', 'title', 'source', 'date', 'snippet', 'favicon', 'thumbnail']
+
+=== Sample News Item ===
+position: 1
+link: https://www.engadget.com/transportation/meet-the-corvette-zr1x-americas-1250-horsepower-hybrid-hypercar-140018897.html
+title: Meet the Corvette ZR1X: America's 1,250-horsepower hybrid hypercar
+source: Engadget
+date: 15 hours ago
+snippet: The new ZR1X is an even higher-performance Corvette that will take America's sports car to new heights.
+favicon: https://serpapi.com/searches/685241d5a39c28ea16376d02/images/45bfb84d27f28bf56b6369ccf1542a0096b0cf520d7df45d.png
+thumbnail: https://serpapi.com/searches/685241d5a39c28ea16376d02/images/45bfb84d27f28bf572bf972d6241c54afb2b748e8def9a85c191b67f747afce8.jpeg
+
+=== Other Potential Result Arrays ===
