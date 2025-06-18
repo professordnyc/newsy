@@ -40,3 +40,13 @@ logs/
 # Local development
 .DS_Store
 Thumbs.db
+
+# Test files
+test_*.py
+*_test_*.txt
+*_test_*.json
+
+# Output files
+*.json
+clarifai_test_results.txt
+mcp_classified_response.json
