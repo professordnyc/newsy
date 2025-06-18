@@ -6,6 +6,7 @@ clarifai>=9.0.0
 streamlit>=1.31.0
 python-multipart>=0.0.5
 google-search-results>=2.4.2  # For SerpAPI
+serpapi>=0.1.0  # Direct SerpAPI Python package
 newspaper3k>=0.2.8  # For article extraction
 lxml[html_clean]>=4.9.0  # Required by newspaper3k
 requests-cache>=1.2.0  # For API response caching

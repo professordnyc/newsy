@@ -10,7 +10,8 @@ from typing import List, Dict, Optional
 load_dotenv()
 
 # Configuration
-MCP_SERVER_URL = os.getenv("MCP_SERVER_URL", "http://localhost:8000")
+# For deployment: set API_URL in Streamlit Community Cloud to your Render backend URL
+MCP_SERVER_URL = os.getenv("API_URL", os.getenv("MCP_SERVER_URL", "http://localhost:8000"))
 
 # Initialize session state
 if 'search_results' not in st.session_state:
