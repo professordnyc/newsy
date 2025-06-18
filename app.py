@@ -18,8 +18,21 @@ if 'search_results' not in st.session_state:
 if 'selected_article' not in st.session_state:
     st.session_state.selected_article = None
 
-def search_news(query: str, region: str = "us", max_results: int = 10) -> List[Dict]:
-    """Search for news articles using the MCP server."""
+def search_news(query: str, region: str = "us", max_results: int = 10, 
+                 use_cache: bool = True, batch_size: int = 4, timeout: int = 30) -> List[Dict]:
+    """Search for news articles using the MCP server.
+    
+    Args:
+        query: Search query
+        region: Region code (e.g., 'us', 'uk')
+        max_results: Maximum number of results to return
+        use_cache: Whether to use cached results
+        batch_size: Number of parallel workers for classification
+        timeout: Timeout in seconds for API requests
+    
+    Returns:
+        List of article dictionaries
+    """
     try:
         response = requests.post(
             f"{MCP_SERVER_URL}/search/headlines/classified",
@@ -27,8 +40,11 @@ def search_news(query: str, region: str = "us", max_results: int = 10) -> List[D
                 "query": query,
                 "region": region.lower(),
                 "max_results": max_results,
-                "use_cache": True
-            }
+                "use_cache": use_cache,
+                "batch_size": batch_size,
+                "timeout": timeout
+            },
+            timeout=timeout + 5  # Add a buffer to the request timeout
         )
         response.raise_for_status()
         return response.json()
@@ -52,17 +68,38 @@ def display_article(article: Dict):
         
         with col2:
             if 'classification' in article:
+                # Handle both string and dictionary formats
                 classification_raw = article['classification']
-                classification = classification_raw if isinstance(classification_raw, dict) else {}
-                label = classification.get('prediction', str(classification_raw)).title() if classification else str(classification_raw).title()
-                confidence = classification.get('confidence', 0) if classification else None
                 
+                # If classification is a string (from MCP server)
+                if isinstance(classification_raw, str):
+                    label = classification_raw.title()
+                    # Look for confidence in metadata
+                    confidence = article.get('metadata', {}).get('classification_confidence', 0.5)
+                # If classification is a dictionary (from fallback)
+                elif isinstance(classification_raw, dict):
+                    label = classification_raw.get('prediction', 'Unknown').title()
+                    confidence = classification_raw.get('confidence', 0.5)
+                else:
+                    label = str(classification_raw).title()
+                    confidence = 0.5
+                
+                # Display with appropriate styling
                 if label.lower() == 'leading':
                     st.success(f"🔍 {label} ({(confidence * 100):.1f}%)")
-                elif label.lower() == 'under_reported':
-                    st.warning(f"🔍 {label.replace('_', ' ')} ({(confidence * 100):.1f}%)")
+                elif label.lower() in ('under_reported', 'under reported'):
+                    st.warning(f"🔍 Under-reported ({(confidence * 100):.1f}%)")
                 else:
-                    st.info(f"🔍 {label}")
+                    st.info(f"🔍 {label} ({(confidence * 100):.1f}%)")
+                    
+                # Debug info
+                with st.expander("Classification Details"):
+                    st.write({
+                        "Raw": classification_raw,
+                        "Label": label,
+                        "Confidence": confidence,
+                        "Metadata": article.get('metadata', {})
+                    })
         
         st.divider()
 
@@ -87,6 +124,19 @@ def main():
         with col2:
             max_results = st.slider("Max results", 5, 50, 10, 5)
         
+        # Advanced options in expander
+        with st.expander("Advanced Options"):
+            use_cache = st.checkbox("Use cache", True, 
+                                   help="Use cached results when available to improve performance")
+            
+            col1, col2 = st.columns(2)
+            with col1:
+                batch_size = st.slider("Batch size", 1, 8, 4, 1,
+                                      help="Number of parallel workers for classification")
+            with col2:
+                timeout = st.slider("Timeout (sec)", 10, 60, 30, 5,
+                                   help="Timeout for API requests in seconds")
+        
         search_button = st.button("Search", type="primary", use_container_width=True)
         
         st.divider()
@@ -96,7 +146,16 @@ def main():
     # Main content area
     if search_button and query:
         with st.spinner("Searching for news..."):
-            results = search_news(query, region, max_results)[:max_results]
+            # Use the advanced parameters from the UI
+            results = search_news(
+                query=query, 
+                region=region, 
+                max_results=max_results,
+                use_cache=use_cache,
+                batch_size=batch_size,
+                timeout=timeout
+            )[:max_results]
+            
             # Apply simple heuristic classification if missing
             total = len(results)
             for idx, art in enumerate(results):
@@ -125,8 +184,15 @@ def main():
         for idx, article in enumerate(st.session_state.search_results):
             if not show_all:
                 classification_raw = article.get('classification', {})
-                classification = classification_raw if isinstance(classification_raw, dict) else {}
-                is_under_reported = classification.get('prediction') == 'under_reported'
+                
+                # Check if article is under-reported based on classification format
+                if isinstance(classification_raw, str):
+                    is_under_reported = classification_raw.lower() == 'under_reported'
+                elif isinstance(classification_raw, dict):
+                    is_under_reported = classification_raw.get('prediction', '').lower() == 'under_reported'
+                else:
+                    is_under_reported = False
+                    
                 if show_under_reported and not is_under_reported:
                     continue
             

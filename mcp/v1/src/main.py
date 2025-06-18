@@ -105,6 +105,8 @@ class SearchRequest(BaseModel):
     region: Region = Field(Region.US, description="Region for the search (us/global)")
     max_results: int = Field(10, ge=1, le=50, description="Maximum number of results to return")
     use_cache: bool = Field(True, description="Whether to use cached results if available")
+    batch_size: int = Field(4, ge=1, le=8, description="Number of parallel workers for classification")
+    timeout: int = Field(30, ge=10, le=60, description="Timeout in seconds for API requests")
     
     # Add field validator to handle case-insensitive region values (Pydantic v2)
     @field_validator('region', mode='before')
@@ -336,7 +338,8 @@ async def search_headlines_classified(
             query=request.query,
             region=request.region,
             max_results=request.max_results,
-            use_cache=request.use_cache
+            use_cache=request.use_cache,
+            timeout=request.timeout
         )
         
         logger.debug(f"Raw search results: {len(raw_results)} items")
@@ -358,14 +361,41 @@ async def search_headlines_classified(
         
         # Batch classify the articles
         logger.info(f"Batch classifying {len(articles_for_classification)} articles")
-        classification_results = services['clarifai'].batch_classify_articles(articles_for_classification)
         
-        # Create a lookup dictionary for classification results
-        classifications = {}
-        for result in classification_results:
-            article_id = result.get('article_id')
-            if article_id:
-                classifications[article_id] = result.get('classification', {})
+        try:
+            # Add detailed logging
+            logger.debug(f"Articles for classification: {articles_for_classification}")
+            
+            # Call the batch_classify_articles method with batch_size and timeout
+            classification_results = services['clarifai'].batch_classify_articles(
+                articles=articles_for_classification,
+                model_id="llama-3",
+                max_workers=request.batch_size
+            )
+            
+            # Check if we got a valid result
+            if classification_results is None:
+                logger.error("batch_classify_articles returned None")
+                classification_results = []
+                
+            logger.debug(f"Classification results: {classification_results}")
+            
+            # Create a lookup dictionary for classification results
+            classifications = {}
+            for idx, result in enumerate(classification_results):
+                if result is None:
+                    logger.warning(f"Classification result at index {idx} is None, skipping")
+                    continue
+                    
+                # In the updated service, the classification is directly in the article copy
+                article_id = str(idx)
+                classifications[article_id] = {
+                    'prediction': result.get('classification', 'unknown'),
+                    'confidence': result.get('classification_confidence', 0.0)
+                }
+        except Exception as e:
+            logger.error(f"Error in batch classification: {str(e)}", exc_info=True)
+            classifications = {}  # Use empty dict as fallback
         
         # Convert raw results to NewsArticle objects with classifications
         articles = []
