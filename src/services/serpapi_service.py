@@ -82,7 +82,12 @@ class SerpAPIService:
                 logger.info("Using cached session for request")
                 logger.debug(f"Request URL: https://serpapi.com/search")
                 
-                response = self.cache.session.get("https://serpapi.com/search", params=params)
+                # Add timeout and one retry
+                try:
+                    response = self.cache.session.get("https://serpapi.com/search", params=params, timeout=10)
+                except Exception as e:
+                    logger.warning(f"First attempt failed: {e}. Retrying once...")
+                    response = self.cache.session.get("https://serpapi.com/search", params=params, timeout=10)
                 logger.info(f"Response status: {response.status_code}")
                 response.raise_for_status()
                 
@@ -96,8 +101,14 @@ class SerpAPIService:
             else:
                 logger.info("Using direct SerpAPI request (no cache)")
                 
-                search = GoogleSearch(params)
-                results = search.get_dict()
+                # Add timeout and single retry for direct search
+                try:
+                    search = GoogleSearch(params)
+                    results = search.get_dict()
+                except Exception as e:
+                    logger.warning(f"SerpAPI request failed: {e}. Retrying once...")
+                    search = GoogleSearch(params)
+                    results = search.get_dict()
                 logger.debug(f"Raw API response keys: {list(results.keys()) if isinstance(results, dict) else []}")
                 
                 if 'error' in results:

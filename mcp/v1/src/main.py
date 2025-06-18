@@ -2,18 +2,23 @@ import os
 import sys
 import logging
 from enum import Enum
-from pathlib import Path
 from fastapi import FastAPI, HTTPException, Depends, status, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-from pydantic import BaseModel, HttpUrl, Field, validator
+from pydantic import BaseModel, HttpUrl, Field
+from pydantic import field_validator
 from typing import List, Dict, Optional, Any, Union
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
 import uvicorn
 
 # Import models
-from .models import NewsArticle, Region, ClassificationType
+try:
+    # For when running as part of a package
+    from .models import NewsArticle, Region, ClassificationType
+except ImportError:
+    # For direct execution
+    from models import NewsArticle, Region, ClassificationType
 
 # Configure logging
 logging.basicConfig(
@@ -26,13 +31,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Add src directory to Python path
-src_dir = str(Path(__file__).parent.parent.parent.parent / "src")
-if src_dir not in sys.path:
-    sys.path.append(str(src_dir))
-    
-logger.debug(f"Added {src_dir} to sys.path")
-logger.debug(f"Current sys.path: {sys.path}")
+
+
 
 # Initialize services
 def initialize_services():
@@ -40,25 +40,41 @@ def initialize_services():
     try:
         logger.info("Initializing services...")
         
-        # Initialize cache first
-        from services.cache_service import CacheService
-        services['cache'] = CacheService()
-        logger.info("Cache service initialized")
-        
-        # Initialize SerpAPI service
-        from services.serpapi_service import SerpAPIService
-        services['serp'] = SerpAPIService(use_cache=True)
-        logger.info("SerpAPI service initialized")
-        
-        # Initialize Article service
-        from services.article_service import ArticleService
-        services['article'] = ArticleService()
-        logger.info("Article service initialized")
-        
-        # Initialize Clarifai service
-        from services.clarifai_service import ClarifaiService, ClassificationType
-        services['clarifai'] = ClarifaiService()
-        logger.info("Clarifai service initialized")
+        try:
+            # Initialize cache first
+            from src.services.cache_service import CacheService
+            services['cache'] = CacheService()
+            logger.info("Cache service initialized")
+        except Exception as e:
+            logger.error(f"Error initializing CacheService: {e}", exc_info=True)
+            raise
+
+        try:
+            # Initialize SerpAPI service
+            from src.services.serpapi_service import SerpAPIService
+            services['serp'] = SerpAPIService(use_cache=True)
+            logger.info("SerpAPI service initialized")
+        except Exception as e:
+            logger.error(f"Error initializing SerpAPIService: {e}", exc_info=True)
+            raise
+
+        try:
+            # Initialize Article service
+            from src.services.article_service import ArticleService
+            services['article'] = ArticleService()
+            logger.info("Article service initialized")
+        except Exception as e:
+            logger.error(f"Error initializing ArticleService: {e}", exc_info=True)
+            raise
+
+        try:
+            # Initialize Clarifai service
+            from src.services.clarifai_service import ClarifaiService, ClassificationType
+            services['clarifai'] = ClarifaiService()
+            logger.info("Clarifai service initialized")
+        except Exception as e:
+            logger.error(f"Error initializing ClarifaiService: {e}", exc_info=True)
+            raise
         
         return services, True
         
@@ -69,18 +85,18 @@ def initialize_services():
         logger.error(f"Error initializing services: {e}", exc_info=True)
         return None, False
 
+# Load environment variables FIRST
+load_dotenv()
+
 # Initialize all services
 services, SERVICES_AVAILABLE = initialize_services()
 if not SERVICES_AVAILABLE:
-    logger.warning("Some services failed to initialize. Check logs for details.")
-
-# Load environment variables
-load_dotenv()
+    logger.warning("Some non-critical services failed to initialize. Core endpoints will still run where possible.")
 
 app = FastAPI(
     title="Newsy MCP Server",
     description="MCP server for Newsy - A news classification and analysis service",
-    version="0.1.0"
+    version="0.3.0"
 )
 
 # Request models
@@ -90,11 +106,11 @@ class SearchRequest(BaseModel):
     max_results: int = Field(10, ge=1, le=50, description="Maximum number of results to return")
     use_cache: bool = Field(True, description="Whether to use cached results if available")
     
-    # Add validator to handle case-insensitive region values
-    @validator('region', pre=True)
+    # Add field validator to handle case-insensitive region values (Pydantic v2)
+    @field_validator('region', mode='before')
+    @classmethod
     def normalize_region(cls, v):
         if isinstance(v, str):
-            # Convert to lowercase and try to match
             v_lower = v.lower()
             if v_lower == "us":
                 return Region.US
@@ -121,11 +137,9 @@ app.add_middleware(
 
 # Dependency to check service availability
 async def check_services():
-    if not SERVICES_AVAILABLE:
-        raise HTTPException(
-            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
-            detail="Required services are not available. Check server logs for details."
-        )
+    """Dependency that returns the services dictionary.
+    Allows operation even if some optional services are missing.
+    Endpoints should individually verify the specific service they require."""
     return services
 
 # API endpoints
@@ -138,10 +152,10 @@ def root():
         "status": "running",  # Added status field
         "timestamp": datetime.utcnow().isoformat(),  # Added timestamp
         "services": {
-            "serpapi": services.get('serp') is not None,
-            "article_extraction": services.get('article') is not None,
-            "clarifai": services.get('clarifai') is not None,
-            "caching": services.get('cache') is not None
+            "serpapi": services.get('serp') is not None if services else False,
+            "article_extraction": services.get('article') is not None if services else False,
+            "clarifai": services.get('clarifai') is not None if services else False,
+            "caching": services.get('cache') is not None if services else False
         }
     }
 
@@ -284,6 +298,126 @@ async def search_headlines(
             detail=f"Error searching for headlines: {str(e)}"
         )
 
+@app.post("/search/headlines/classified")
+async def search_headlines_classified(
+    request: SearchRequest,
+    services: dict = Depends(check_services)
+):
+    """
+    Search for news headlines and classify them in a single operation.
+    
+    This endpoint combines the functionality of /search/headlines and /analyze/article
+    to provide fully classified news articles in a single API call.
+    
+    Args:
+        request: Search parameters including query string, region, and result limits
+        
+    Returns:
+        List of news articles with classifications (leading/under-reported)
+    """
+    try:
+        logger.info(f"Searching and classifying headlines for: {request.query} in {request.region}")
+        
+        # Check required services
+        if not services.get('serp'):
+            raise HTTPException(
+                status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+                detail="SerpAPI service is not available"
+            )
+            
+        if not services.get('clarifai'):
+            raise HTTPException(
+                status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+                detail="Clarifai service is not available"
+            )
+        
+        # First, get the search results
+        raw_results = services['serp'].search_news(
+            query=request.query,
+            region=request.region,
+            max_results=request.max_results,
+            use_cache=request.use_cache
+        )
+        
+        logger.debug(f"Raw search results: {len(raw_results)} items")
+        
+        if not raw_results:
+            logger.warning("No search results found")
+            return []
+        
+        # Convert raw results to a format suitable for batch classification
+        articles_for_classification = []
+        for idx, result in enumerate(raw_results):
+            articles_for_classification.append({
+                'id': str(idx),
+                'title': result.get('title', ''),
+                'snippet': result.get('snippet', ''),
+                'url': result.get('url', ''),
+                'source': result.get('source', '')
+            })
+        
+        # Batch classify the articles
+        logger.info(f"Batch classifying {len(articles_for_classification)} articles")
+        classification_results = services['clarifai'].batch_classify_articles(articles_for_classification)
+        
+        # Create a lookup dictionary for classification results
+        classifications = {}
+        for result in classification_results:
+            article_id = result.get('article_id')
+            if article_id:
+                classifications[article_id] = result.get('classification', {})
+        
+        # Convert raw results to NewsArticle objects with classifications
+        articles = []
+        for idx, result in enumerate(raw_results):
+            try:
+                # Get classification for this article
+                classification_data = classifications.get(str(idx), {})
+                prediction = classification_data.get('prediction', 'unknown')
+                confidence = classification_data.get('confidence', 0.0)
+                
+                # Map the prediction string to ClassificationType enum
+                article_classification = ClassificationType.UNKNOWN
+                if prediction == "leading":
+                    article_classification = ClassificationType.LEADING
+                elif prediction == "under_reported":
+                    article_classification = ClassificationType.UNDER_REPORTED
+                
+                # Create NewsArticle object
+                article = NewsArticle(
+                    title=result.get('title', ''),
+                    url=result.get('url', ''),
+                    source=result.get('source', ''),
+                    snippet=result.get('snippet', ''),
+                    region=request.region,
+                    classification=article_classification,
+                    metadata={
+                        'position': result.get('position'),
+                        'raw_date': result.get('date'),
+                        'thumbnail': result.get('thumbnail'),
+                        'favicon': result.get('favicon'),
+                        'classification_confidence': confidence
+                    }
+                )
+                
+                articles.append(article)
+                
+            except Exception as e:
+                logger.warning(f"Error converting search result to NewsArticle: {str(e)}")
+                continue
+                
+        logger.info(f"Returning {len(articles)} classified news articles")
+        return articles
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error searching and classifying headlines: {str(e)}", exc_info=True)
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Error searching and classifying headlines: {str(e)}"
+        )
+
 @app.post("/articles/extract", response_model=NewsArticle)
 async def extract_article(
     request: ArticleExtractionRequest,
@@ -418,7 +552,7 @@ async def test_endpoint():
 
 # Health check endpoint
 @app.get("/health")
-async def health_check(services: dict = Depends(check_services)):
+async def health_check():
     """
     Health check endpoint that verifies all services are operational.
     
@@ -476,11 +610,4 @@ async def clear_cache(
             detail=f"Error clearing cache: {str(e)}"
         )
 
-if __name__ == "__main__":
-    uvicorn.run(
-        "mcp.v1.src.main:app",
-        host="0.0.0.0",
-        port=int(os.getenv("PORT", 8000)),
-        reload=True,
-        log_level="info"
-    )
+

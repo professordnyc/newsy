@@ -38,7 +38,7 @@ class NewsArticle(BaseModel):
         json_encoders = {
             datetime: lambda v: v.isoformat() if v else None,
         }
-        schema_extra = {
+        json_schema_extra = {
             "example": {
                 "title": "Example News Article",
                 "url": "https://example.com/news/article",
