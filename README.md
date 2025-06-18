@@ -19,6 +19,10 @@ A headlines interrogation and classification agent that uses Clarifai's Llama-3 
 3. **Install dependencies**
    ```bash
    pip install -r requirements.txt
+   # For HTML cleaning functionality
+   pip install "lxml[html_clean]"
+   # For SerpAPI integration
+   pip install serpapi
    ```
 
 4. **Set up environment variables**
@@ -69,6 +73,36 @@ newsy/
         ├── cache_service.py
         ├── clarifai_service.py
         └── serpapi_service.py
+```
+
+## Troubleshooting
+
+### Common Issues
+
+1. **503 Service Unavailable Error**
+   - Ensure all dependencies are installed, including `lxml[html_clean]` and `serpapi`
+   - Activate the virtual environment before running the server
+   - Check `newsy_mcp.log` for specific service initialization errors
+
+2. **Connection Refused Error**
+   - Make sure the server is running on port 8000
+   - Check if there are any errors in the server logs
+   - Restart the server if necessary
+
+3. **500 Internal Server Error**
+   - Check the server logs for specific error messages
+   - Ensure all API keys are correctly set in the `.env` file
+   - Verify that all services are initialized correctly via the `/health` endpoint
+
+### Running the Server
+
+To run the MCP server:
+```bash
+# Activate the virtual environment first
+.\venv\Scripts\activate  # On Windows
+
+# Run the server
+python run_server.py
 ```
 
 ## License

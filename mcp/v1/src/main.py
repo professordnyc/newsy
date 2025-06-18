@@ -338,8 +338,7 @@ async def search_headlines_classified(
             query=request.query,
             region=request.region,
             max_results=request.max_results,
-            use_cache=request.use_cache,
-            timeout=request.timeout
+            use_cache=request.use_cache
         )
         
         logger.debug(f"Raw search results: {len(raw_results)} items")
