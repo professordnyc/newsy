@@ -65,6 +65,7 @@ A headlines interrogation and classification agent that uses Clarifai's Llama-3 
       - `services/` - Service implementations
 - `requirements.txt` - Python dependencies
 - `.env.example` - Example environment variables
+- `newsy_overview.md` - Optional architecture documentation (for deeper understanding of the system)
 
 ## Performance Optimizations
 
