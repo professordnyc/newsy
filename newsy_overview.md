@@ -13,7 +13,7 @@ Newsy is a news classification system with a client-server architecture:
 └─────────────────┘     └───────────────────┘     └──────────────────┘
 ```
 
-## 1. Backend (MCP - Model Control Plane)
+## 1. Backend (MCP - Model Context Protocol)
 
 The backend is built with FastAPI and provides several key services:
 
