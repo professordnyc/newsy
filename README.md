@@ -6,32 +6,65 @@ A headlines interrogation and classification agent that uses Clarifai's Llama-3 
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/professordnyc/newsy.git
    cd newsy
    ```
 
 2. **Set up virtual environment**
-   ```bash
-   python -m venv venv
-   .\venv\Scripts\activate  # On Windows
+   - Windows:
+     ```bash
+     python -m venv venv
+   - macOS/Linux:
+     ```bash
+     python3 -m venv venv
    ```
+   
+   Activate the environment:
+   - Windows:
+     ```bash
+     .\venv\Scripts\activate
+     ```
+   - macOS/Linux:
+     ```bash
+     source venv/bin/activate
+     ```
 
 3. **Install dependencies**
    ```bash
    pip install -r requirements.txt
-   # For HTML cleaning functionality
-   pip install "lxml[html_clean]"
-   # For SerpAPI integration
-   pip install serpapi
    ```
 
 4. **Set up environment variables**
-   Copy `.env.example` to `.env` and fill in your API keys.
+   ```bash
+   # Copy the example environment file
+   cp .env.example .env
+   ```
+   Then edit `.env` and add your API keys:
+   - `CLARIFAI_API_KEY`
+   - `SERPAPI_API_KEY`
 
 5. **Run the application**
+   Start the backend server:
+   ```bash
+   python run_server.py
+   ```
+   
+   In a new terminal, start the Streamlit frontend:
    ```bash
    streamlit run app.py
    ```
+
+## Project Structure
+
+- `app.py` - Streamlit frontend application
+- `run_server.py` - Backend server launcher
+- `mcp/` - Backend API and services
+  - `v1/` - API version 1
+    - `src/` - Source code
+      - `main.py` - FastAPI application and endpoints
+      - `services/` - Service implementations
+- `requirements.txt` - Python dependencies
+- `.env.example` - Example environment variables
 
 ## Performance Optimizations
 
@@ -53,9 +86,22 @@ The application includes several performance optimizations to improve responsive
    - Configurable timeouts via UI
    - Graceful recovery from API failures
 
-These optimizations are available in both the Streamlit UI and MCP API endpoints.
+## Contributing
 
-## Project Structure
+1. Create a new branch for your feature or bugfix:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+2. Make your changes and commit them:
+   ```bash
+   git add .
+   git commit -m "Add your commit message"
+   ```
+
+3. Push your changes and create a pull request
+
+## Project Structure (Detailed)
 
 ```
 newsy/
@@ -69,10 +115,9 @@ newsy/
 │       └── src/        # Source code for MCP
 └── src/                # Source code
     ├── __init__.py
-    └── services/       # Business logic
-        ├── cache_service.py
-        ├── clarifai_service.py
-        └── serpapi_service.py
+    ├── cache_service.py
+    ├── clarifai_service.py
+    └── serpapi_service.py
 ```
 
 ## Troubleshooting
